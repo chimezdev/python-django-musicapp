@@ -13,9 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from . import views #imports views do we can use it
 from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name="index") #empty '' means that is the root url,
 ]
+#'views.index' above means, when a user visits that url, what to render is found in the 'views.index'
+# the 'name=index' is just a tag, it could be named anything but bcos homepage is usually named index file
+
