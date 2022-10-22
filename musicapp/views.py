@@ -6,12 +6,12 @@ from django.shortcuts import render
 #define whateever you wish to be rendered here
 
 def index(request):
-    # context = { #this will b gotten from our db later
-    #     'name': 'Stone',
-    #     'age': '28',
-    #     'nationality': 'Nigerian'
-    # }
-    return render(request, 'index.html') #include ',context' to the return when you uncomment the context dictionary abv
+    context = { #this will b gotten from our db later
+        'name': 'Stone',
+        'age': '28',
+        'nationality': 'Nigerian'
+    }
+    return render(request, 'index.html', context) #include ',context' to the return when you uncomment the context dictionary abv
 
 
 def counter(request):
