@@ -1,4 +1,15 @@
-<h1>
-    Hey, Welcome to my MUSICAPP!
+{% comment %} <h1>
+    Hey, Welcome {{name}} to my MUSICAPP! <br/>
+    You are a {{nationality}} and {{age}} years old.
 </h1>
-<img src="https://previews.123rf.com/images/carloscastilla/carloscastilla1505/carloscastilla150500112/40227435-live-music-background-show-and-public.jpg" />
+<img src="https://previews.123rf.com/images/carloscastilla/carloscastilla1505/carloscastilla150500112/40227435-live-music-background-show-and-public.jpg" /> {% endcomment %}
+
+
+<!--create a form with submit button--> 
+<h1>Input your text below:</h1>
+<form method="POST" action="counter"> <!--the data from index.html page is sent to counter.html-->
+    {% csrf_token %}
+    <textarea name="text" rows="20" cols="60"></textarea><br> <!--create an area for user to input text-->
+    <input type="submit"/> <!--creates a submit button-->
+
+</form>
