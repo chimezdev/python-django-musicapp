@@ -60,6 +60,10 @@ def login(request):
             return redirect('login')
     else:
         return render(request, 'login.html')
+    
+def logout(request):
+    auth.logout(request) #this line logs the user out of the app
+    return redirect('/') # return user to homepage
 
 
 def counter(request):

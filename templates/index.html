@@ -50,22 +50,27 @@
         <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">Chimezie Ochuba</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="{% static '#' %}" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="{% static '#' %}" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="{% static '#' %}" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="{% static '#' %}" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="{% static '#' %}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="{% static '#hero' %}" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="{% static '#about' %}" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="{% static '#resume' %}" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="{% static '#portfolio' %}" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="{% static '#services' %}" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-          <li><a href="{% static '#contact' %}" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          {% if user.is_authenticated %}
+          <li><a href="logout" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Logout</span></a></li>
+          {% else %}
+          <li><a href="login" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Login</span></a></li>
+          {% endif %}
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -78,14 +83,14 @@
         <h1> Welcome, {{user.username}}</h1>
     </div>
   </section>
-  {% else %}
+        {% else %}
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Chimezie Ochuba</h1>
       <p>I'm a<span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
     </div>
   </section><!-- End Hero -->
-  {% endif %}
+        {% endif %}
   <main id="main">
 
     <!-- ======= About Section ======= -->
@@ -99,10 +104,10 @@
         {% if about.name == 'Chimez' %}
             <p>Yes I am Chimezie, an AWS Cloud Engineer</p>
         {% endif %}
-        <!-- rewriting our if statement.--> 
+         
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+            <img src="{% static 'assets/img/profile-img.jpg' %}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>AWS Cloud Engineer &amp; Backend Web Developer- Python.</h3>
