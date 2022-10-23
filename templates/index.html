@@ -72,13 +72,20 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
+  <section>
+    <div>
+        {% if user.is_authenticated %}
+        <h1> Welcome, {{user.username}}</h1>
+    </div>
+  </section>
+  {% else %}
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Chimezie Ochuba</h1>
-      <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
+      <p>I'm a<span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
     </div>
   </section><!-- End Hero -->
-
+  {% endif %}
   <main id="main">
 
     <!-- ======= About Section ======= -->

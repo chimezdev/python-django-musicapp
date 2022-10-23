@@ -21,7 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"), #empty '' means that is the root url
     path('counter', views.counter, name='counter'),
-    path('register', views.register, name='register')
+    path('register', views.register, name='register'),
+    path('login', views.login, name='login')
 ]
 #'views.index' above means, when a user visits that url, what to render is found in the 'views.index'
 # the 'name=index' is just a tag, it could be named anything but bcos homepage is usually named index file
