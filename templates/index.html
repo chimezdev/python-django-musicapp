@@ -84,13 +84,15 @@
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
-
+    {% for about in about %} <!--loops through the block of code and prints it to the page d num of data obj avail.-->
         <div class="section-title">
-          <h2>About</h2>
-          <p>{{about.name}}</p>
+          <h2>{{about.name}}</h2>
           <p>{{about.details}}</p>
         </div>
-
+        {% if about.name == 'Chimez' %}
+            <p>Yes I am Chimezie, an AWS Cloud Engineer</p>
+        {% endif %}
+        <!-- rewriting our if statement.--> 
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
             <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
@@ -125,6 +127,7 @@
             </p>
           </div>
         </div>
+    {% endfor %}
 
       </div>
     </section><!-- End About Section -->
