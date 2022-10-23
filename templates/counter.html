@@ -1,1 +1,7 @@
-<h1> Nuber of words you inputed is {{amount}}</h1>
+{% comment %} <h1> Nuber of words you inputed is {{amount}}</h1> {% endcomment %}
+
+{% for post in posts %} <!--loops through the list post-->
+    <h3><a href="{% url 'post' post %}">Post</h3>
+        <!--the above code says to print 'Post' up to number of elems in 'posts' list and when any is clicked, it should go to home/post/<list_elem>-->
+            <!-- and the url corresponds to the url of our "post.html"-->
+{% endfor %}

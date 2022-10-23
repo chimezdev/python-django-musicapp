@@ -66,9 +66,17 @@ def logout(request):
     return redirect('/') # return user to homepage
 
 
-def counter(request):
-    text = request.POST['text'] #form mthod is POST(it could GET), 'text'-the name we are giving to textarea
-    word_count = len(text.split()) #counts the number of words frm user captured and stored in 'text' variable
+# def counter(request):
+#     text = request.POST['text'] #form mthod is POST(it could GET), 'text'-the name we are giving to textarea
+#     word_count = len(text.split()) #counts the number of words frm user captured and stored in 'text' variable
     
-    return render(request, 'counter.html', {'amount': word_count}) #use the key 'amount' in the counter.html file
+#     return render(request, 'counter.html', {'amount': word_count}) #use the key 'amount' in the counter.html file
+
+
+def post(request, pk):
+    return render(request, 'post.html', {'pk': pk})
+
+def counter(request):
+    posts = [1, 2, 3, 'chimez', 'stone'] # we will iterate through this list in 'counter.html' file
+    return render(request, 'counter.html', {'posts': posts}) #use the key 'posts' in the counter.html file
 
